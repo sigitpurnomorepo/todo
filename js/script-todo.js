@@ -13,7 +13,7 @@ function drop(event) {
     event.target.appendChild(document.getElementById(data));
 }
 
-// Fungsi Add
+// Fungsi Add Task
 const btnAdd = document.getElementById("btn-add");
 const todo = document.getElementById("todo-item");
 btnAdd.addEventListener("click", (event) => {
@@ -25,6 +25,7 @@ btnAdd.addEventListener("click", (event) => {
     // Tes pengambilan value
     //console.log(title, description);
 
+    // Validasi dalam proses create task baru
     if (title && description != "") {
         const card = document.createElement("div");
         const article = document.createElement("article");
@@ -69,6 +70,7 @@ btnAdd.addEventListener("click", (event) => {
     }
 })
 
+// Fungsi edit task
 function handleEdit(id) {
     const title = window.prompt("Ganti Judul");
     const description = window.prompt("Ganti Description");
@@ -86,6 +88,7 @@ function handleEdit(id) {
     }
 }
 
+// Fungsi delete task
 function handleDelete(id) {
     const btnDelete = document.getElementById(id);
     const card = btnDelete.parentNode.parentNode.parentNode;
@@ -93,6 +96,7 @@ function handleDelete(id) {
     card.setAttribute("class", "d-none");
 }
 
+// Fungsi jam realtime
 function showRealtimeClock() {
     const footerRealtimeClock = document.getElementById("footer-time");
     const time = new Date();
